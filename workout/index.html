@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workout Plan</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05">
+</head>
+<body>
+  <header class="hero">
+    <a class="home-link" href="../">&lsaquo; Home</a>
+    <h1>Knee-Friendly Strength Plan</h1>
+    <p>Three one-hour gym sessions a week, with cycling and walking on the other days.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Your week</h2>
+      <ol class="week" id="week"></ol>
+    </section>
+
+    <section class="card">
+      <h2>Which weeks are you in?</h2>
+      <div class="phase-picker" id="phase-picker" role="radiogroup" aria-label="Training phase"></div>
+      <p class="phase-note" id="phase-note"></p>
+    </section>
+
+    <section class="card workout-card">
+      <div class="tabs" id="tabs" role="tablist" aria-label="Gym workouts"></div>
+      <div id="workout"></div>
+    </section>
+
+    <section class="card">
+      <h2>Knee rules</h2>
+      <ul class="rules">
+        <li><strong>The pain rule.</strong> Rate knee discomfort 0&ndash;10 while you train. Up to 3/10 is fine
+          if it settles by the next morning. Sharp pain, swelling, locking or the knee giving way means stop
+          that exercise and use its swap.</li>
+        <li><strong>Hips back, not knees forward.</strong> On squats and step-ups, sit back as if toward a chair
+          and keep your knees in line with your second toe.</li>
+        <li><strong>Control the lowering.</strong> Take about 3 seconds on the way down. Slow lowering builds
+          strength with less joint stress.</li>
+        <li><strong>Depth is earned.</strong> Only go as low as feels comfortable. Range of motion can grow over
+          the weeks; weight is not worth knee pain.</li>
+        <li><strong>Skipped on purpose:</strong> lunges, jumping, deep loaded squats and leg extensions with
+          heavy weight. They load the front of the knee the most.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>When to add weight</h2>
+      <p>Use the <strong>two-for-two rule</strong>: when you can do the top of the rep range for every set with good
+        form two sessions in a row, add the smallest weight step next time (usually 1&ndash;2.5 kg / 2.5&ndash;5 lb).
+        After week 12, take an easy week with half the sets, then start again at weeks 5&ndash;8 with your new weights.</p>
+    </section>
+
+    <section class="card">
+      <h2>Cycling and walking days</h2>
+      <ul class="rules">
+        <li><strong>Bike setup protects your knees.</strong> At the bottom of the pedal stroke your knee should
+          stay slightly bent. A seat that is too low is the most common cause of knee pain in cycle classes.</li>
+        <li><strong>Monday and Friday classes come the day before a gym session.</strong> Ride them at a
+          comfortable, steady effort so your legs are fresh for strength work the next day.</li>
+        <li><strong>Stay seated on heavy climbs</strong> for the first few weeks, and keep cadence above about
+          60 rpm rather than grinding very heavy resistance.</li>
+        <li><strong>Walks:</strong> 30&ndash;45 minutes at a pace where you can talk but not sing. Flat routes or gentle
+          inclines; steep downhills are harder on knees than uphills.</li>
+        <li><strong>Rest day:</strong> an easy stroll and some of the cool-down stretches are a great way to keep
+          knees from stiffening up.</li>
+      </ul>
+    </section>
+
+    <p class="disclaimer">This is a general plan, not medical advice. If you have a diagnosed knee condition,
+      have had knee surgery, or pain is getting worse, check in with a doctor or physical therapist.
+      They can tailor the exercises and swaps for your knees.</p>
+  </main>
+
+  <script src="plan.js?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Pac-Man</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="style.css?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="game" touch-action="none"></canvas>
+    <div id="hud">
+      <div class="top">
+        <div>SCORE<span id="score">0</span></div>
+        <div>HIGH SCORE<span id="high">0</span></div>
+        <div>LEVEL<span id="level">1</span></div>
+      </div>
+      <div id="message"></div>
+      <div id="lives"></div>
+      <a id="home" href="../">&lsaquo; HOME</a>
+    </div>
+  </div>
+  <!-- On-screen D-pad, shown on touch devices. data-dir uses the engine's direction codes. -->
+  <div id="controls" aria-label="Direction controls">
+    <div class="dpad">
+      <button class="up" data-dir="1" aria-label="Up"></button>
+      <button class="left" data-dir="4" aria-label="Left"></button>
+      <button class="right" data-dir="2" aria-label="Right"></button>
+      <button class="down" data-dir="3" aria-label="Down"></button>
+    </div>
+  </div>
+  <script src="babylon.js?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05"></script>
+  <script src="game.js?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05"></script>
+</body>
+</html>

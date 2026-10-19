@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05">
+</head>
+<body>
+  <header class="hero">
+    <a class="home-link" href="../">&lsaquo; Home</a>
+    <h1>To-Do</h1>
+    <p class="status" id="status" aria-live="polite"></p>
+  </header>
+
+  <main>
+    <!-- Shown until this device has the passcode. -->
+    <section class="card" id="gate" hidden>
+      <h2>Enter the passcode</h2>
+      <p class="muted">The list is shared, so it's protected. Each phone or computer only needs this once.</p>
+      <form id="gate-form" class="gate-form">
+        <input id="gate-code" type="password" autocomplete="current-password" placeholder="Passcode" required>
+        <button class="mint" type="submit">Open list</button>
+      </form>
+      <p class="error" id="gate-error" role="alert"></p>
+    </section>
+
+    <section class="card" id="setup" hidden>
+      <h2>Almost ready</h2>
+      <p class="muted">This list isn't connected to its database yet.</p>
+    </section>
+
+    <div id="app" hidden>
+      <section class="card">
+        <form id="add-form" class="add-form">
+          <input id="add-text" type="text" maxlength="500" placeholder="Add a to-do…" autocomplete="off" required>
+          <div class="tag-picker" role="radiogroup" aria-label="Who is it for?">
+            <button type="button" class="tag-option banner tag-brian" data-tag="brian" role="radio">Brian</button>
+            <button type="button" class="tag-option banner tag-melissa" data-tag="melissa" role="radio">Melissa</button>
+            <button type="button" class="tag-option banner tag-both" data-tag="both" role="radio"><span>Melissa</span><span>Brian</span></button>
+          </div>
+          <button class="mint add-button" type="submit">Add</button>
+        </form>
+      </section>
+
+      <div class="filters" role="radiogroup" aria-label="Show">
+        <button class="filter mint-outline" data-filter="all" role="radio">Everyone</button>
+        <button class="filter mint-outline" data-filter="brian" role="radio">Brian</button>
+        <button class="filter mint-outline" data-filter="melissa" role="radio">Melissa</button>
+      </div>
+
+      <ul class="todos" id="open-list"></ul>
+      <p class="empty muted" id="empty">Nothing to do. Nice!</p>
+
+      <details class="done-section" id="done-section">
+        <summary>Done (<span id="done-count">0</span>)</summary>
+        <ul class="todos" id="done-list"></ul>
+        <button class="mint-outline small" id="clear-done" type="button">Clear done items</button>
+      </details>
+
+      <p class="footer-actions">
+        <button class="link" id="lock" type="button">Forget passcode on this device</button>
+      </p>
+    </div>
+  </main>
+
+  <script src="config.js?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05"></script>
+  <script src="app.js?v=2a84d6ec0bc94e009911abab5ab9eec630ce3f05"></script>
+</body>
+</html>

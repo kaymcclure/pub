@@ -1,0 +1,132 @@
+:root {
+  --sunset-deep: #ff6b2c;
+  --sunset: #ff9a4d;
+  --sunset-soft: #ffc796;
+  --mint: #98f5c8;
+  --mint-hover: #7eeab6;
+  --mint-edge: #5fd39d;
+  --ink: #3b2416;
+  --button-ink: #0f4a33;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #fff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--ink);
+  /* Sunset orange at the top, fading to white. */
+  background: linear-gradient(
+    180deg,
+    var(--sunset-deep) 0%,
+    var(--sunset) 30%,
+    var(--sunset-soft) 58%,
+    #fff 100%
+  ) fixed;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(48px, 12vh, 120px) 16px 48px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(120, 40, 0, 0.25);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(40px, 9vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+header p {
+  margin: 8px 0 0;
+  font-size: clamp(16px, 3.5vw, 20px);
+}
+
+.pages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.page-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border: 2px solid var(--mint-edge);
+  border-radius: 18px;
+  background: var(--mint);
+  color: var(--button-ink);
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(150, 60, 0, 0.18);
+  transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}
+
+.page-button:hover {
+  background: var(--mint-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(150, 60, 0, 0.22);
+}
+
+.page-button:active {
+  transform: translateY(0);
+}
+
+.page-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+}
+
+.icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.icon.pacman {
+  border-radius: 50%;
+  background: conic-gradient(from 60deg, transparent 0 60deg, #ffd400 60deg 360deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-button {
+    transition: none;
+  }
+}

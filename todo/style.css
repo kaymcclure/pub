@@ -1,0 +1,384 @@
+:root {
+  --sunset-deep: #ff6b2c;
+  --sunset: #ff9a4d;
+  --sunset-soft: #ffc796;
+  --mint: #98f5c8;
+  --mint-hover: #7eeab6;
+  --mint-edge: #5fd39d;
+  --mint-ink: #0f4a33;
+  --brian: #2f6fdf;
+  --melissa: #ff8a2b;
+  --ink: #2e1f17;
+  --muted: #7a6558;
+  --line: #f1e3d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--ink);
+  line-height: 1.45;
+  background: linear-gradient(180deg, var(--sunset-deep) 0, var(--sunset) 200px, var(--sunset-soft) 380px, #fff 700px) no-repeat, #fff;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.hero,
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.hero {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(120, 40, 0, 0.25);
+}
+
+.home-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border: 2px solid var(--mint-edge);
+  border-radius: 999px;
+  background: var(--mint);
+  color: var(--mint-ink);
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.home-link:hover {
+  background: var(--mint-hover);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(32px, 8vw, 44px);
+  line-height: 1.1;
+}
+
+.status {
+  min-height: 1.5em;
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+main {
+  padding-bottom: 48px;
+}
+
+.card {
+  margin-bottom: 16px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(150, 60, 0, 0.12);
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  min-height: 1.4em;
+  margin: 8px 0 0;
+  color: #c0392b;
+}
+
+input[type="text"],
+input[type="password"],
+.edit {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px; /* 16px stops phones zooming in on focus */
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--mint-edge);
+}
+
+/* ---- Buttons (mint green) ------------------------------------------------- */
+
+.mint {
+  padding: 12px 20px;
+  border: 2px solid var(--mint-edge);
+  border-radius: 12px;
+  background: var(--mint);
+  color: var(--mint-ink);
+  font-weight: 700;
+}
+
+.mint:hover {
+  background: var(--mint-hover);
+}
+
+.mint:disabled {
+  opacity: 0.6;
+}
+
+.mint-outline {
+  padding: 8px 14px;
+  border: 2px solid var(--mint-edge);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--mint-ink);
+  font-weight: 600;
+}
+
+.mint-outline:hover {
+  background: #effdf6;
+}
+
+.mint-outline.active {
+  background: var(--mint);
+}
+
+.small {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.link {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+button:focus-visible,
+a:focus-visible,
+.text:focus-visible {
+  outline: 3px solid var(--sunset-deep);
+  outline-offset: 2px;
+}
+
+/* ---- Passcode gate --------------------------------------------------------- */
+
+.gate-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.gate-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---- Banners: who a to-do is for ------------------------------------------- */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.banner.tag-brian {
+  background: var(--brian);
+}
+
+.banner.tag-melissa {
+  background: var(--melissa);
+}
+
+/* Half orange (Melissa), half blue (Brian). */
+.banner.tag-both {
+  padding: 0;
+  background: linear-gradient(90deg, var(--melissa) 50%, var(--brian) 50%);
+}
+
+.banner.tag-both span {
+  flex: 1;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+/* ---- Add form -------------------------------------------------------------- */
+
+.add-form {
+  display: grid;
+  gap: 10px;
+}
+
+.tag-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 8px;
+}
+
+.tag-option {
+  min-height: 44px;
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0.45;
+  outline: 3px solid transparent;
+  outline-offset: 2px;
+}
+
+.tag-option.selected {
+  opacity: 1;
+  outline-color: var(--mint-edge);
+}
+
+.add-button {
+  width: 100%;
+}
+
+/* ---- List ------------------------------------------------------------------ */
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0 12px;
+}
+
+.todos {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo {
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(150, 60, 0, 0.1);
+}
+
+.todo .banner {
+  width: 100%;
+}
+
+.todo.saving {
+  opacity: 0.6;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 10px 12px;
+}
+
+.check {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--mint-edge);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.check[aria-pressed="true"] {
+  background: var(--mint);
+}
+
+.check[aria-pressed="true"]::after {
+  content: "✓";
+  color: var(--mint-ink);
+  font-weight: 700;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  cursor: text;
+}
+
+.todo .edit {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 10px;
+}
+
+.todo.done .text {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.todo.done .banner {
+  opacity: 0.55;
+}
+
+.delete {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.delete:hover {
+  background: #fbeee6;
+  color: #c0392b;
+}
+
+.empty {
+  margin: 8px 4px 16px;
+  text-align: center;
+}
+
+.done-section {
+  margin-top: 20px;
+}
+
+.done-section summary {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.done-section .mint-outline {
+  display: block;
+  margin: 12px auto 0;
+}
+
+.footer-actions {
+  margin-top: 28px;
+  text-align: center;
+}
